@@ -619,7 +619,7 @@ function drawHeroStrip() {
     </div>` : ""}
     <div class="hero-metric">
       <span class="hm-val" style="color:var(--signal)">${fmt(current.kpis.service_level_pct, 2)}%</span>
-      <span class="hm-lbl">Baseline orders served</span>
+      <span class="hm-lbl">Baseline demand served, by value</span>
       <span class="hm-sub">${cur}${short(current.kpis.total_cost)} landed cost · ${fmt(current.kpis.trucks_dispatched)} truck trips</span>
     </div>
     <div class="hero-metric">
@@ -875,7 +875,7 @@ function noticeLine(w, cur) {
   const hit = normal - late, d = n.profit - normal;
   const won = hit > tol ? ` (${fmt(100 * Math.max(0, Math.min(1, (n.profit - late) / hit)))}% of the hit won back)` : "";
   const money = Math.abs(d) <= tol ? "baseline profit preserved (within solver tolerance)" : `${d >= 0 ? "+" : "−"}${cur}${short(Math.abs(d))} vs baseline${won}`;
-  return `<p style="font-size:0.9rem;">With ${term("notice", "a week's notice")} (re-planned on day ${n.day}): <b>${money}</b>, serving <b>${fmt(n.service_level_pct, 2)}%</b> of orders.</p>`;
+  return `<p style="font-size:0.9rem;">With ${term("notice", "a week's notice")} (re-planned on day ${n.day}): <b>${money}</b>, serving <b>${fmt(n.service_level_pct, 2)}%</b> of demand, by value.</p>`;
 }
 
 function opsTable(ops, heads, cur, changeHead = "Acted ahead vs no early action") {
@@ -955,8 +955,8 @@ function showStory(id) {
     const w = story.with_without, ops = Object.fromEntries(w.operations.map((r) => [r.key, r.values]));
     const [, sLate, sAhead] = ops.service_level_pct, [, uLate, uAhead] = ops.cases_short;
     const headline = sAhead - sLate >= 0.005
-      ? `Acting ahead, the plan serves ${fmt(sAhead, 2)}% of orders. With no early action (emergency on day ${w.found_out_on_day}), service drops to ${fmt(sLate, 2)}% with ${short(Math.max(0, uLate - uAhead))} more cases short.`
-      : `Acting ahead or met as an emergency on day ${w.found_out_on_day}, the plan serves ${fmt(sAhead, 2)}% of orders.`;
+      ? `Acting ahead, the plan serves ${fmt(sAhead, 2)}% of demand, by value. With no early action (emergency on day ${w.found_out_on_day}), service drops to ${fmt(sLate, 2)}% with ${short(Math.max(0, uLate - uAhead))} more cases short.`
+      : `Acting ahead or met as an emergency on day ${w.found_out_on_day}, the plan serves ${fmt(sAhead, 2)}% of demand, by value.`;
     recSummary = `<div class="block"><p class="callout">${esc(headline)}</p>${recovery(w, cur, story.id)}</div>`;
     tablesBlock = `<div class="block">
       <h3>Counterfactual Financial &amp; Operational Comparison</h3>
