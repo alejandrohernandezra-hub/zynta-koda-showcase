@@ -2,7 +2,7 @@
 
 The public page of Zynta-Koda, a personal, non-commercial R&D planning engine,
 demonstrated on fictional food and drink companies:
-https://alejandrohernandezra-hub.github.io/zynta-koda-showcase/
+https://zyntakoda.com/
 
 Everything here is generated. The companies, their data and the disruptions
 are fictional; every number on the page is what the engine computed on them.
