@@ -1,0 +1,29 @@
+{
+ "steps": [
+  {
+   "file": "tour/01-verdict.png",
+   "title": "The verdict",
+   "caption": "The plan is run and the S&OP gate decides at once: released on its own, or held for a person with the failed check named. Everything below explains how it got here."
+  },
+  {
+   "file": "tour/02-executive.png",
+   "title": "The decisions behind it",
+   "caption": "The few decisions leadership must take, each with the money attached."
+  },
+  {
+   "file": "tour/03-reconciliation.png",
+   "title": "Where the plans disagree",
+   "caption": "Where demand, supply and finance pull different ways, and what each disagreement costs."
+  },
+  {
+   "file": "tour/04-functions.png",
+   "title": "What each function decided",
+   "caption": "Demand, supply, logistics, inventory and procurement: what each needs to decide."
+  },
+  {
+   "file": "tour/05-master-data.png",
+   "title": "The data underneath",
+   "caption": "The tables every plan is built from, checked by fixed rules before any plan runs."
+  }
+ ]
+}
