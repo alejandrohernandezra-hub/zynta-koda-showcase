@@ -6,6 +6,11 @@
    "caption": "The plan is run and the S&OP gate decides at once: released on its own, or held for a person with the failed check named. Everything below explains how it got here."
   },
   {
+   "file": "tour/02-story.png",
+   "title": "Each story on its network",
+   "caption": "Pick a story and see it on the company's own network: the problem in amber, the plan's answer in teal, and an overview of the whole network marking where it happens."
+  },
+  {
    "file": "tour/02-executive.png",
    "title": "The decisions behind it",
    "caption": "The few decisions leadership must take, each with the money attached."
